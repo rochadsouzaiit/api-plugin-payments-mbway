@@ -31,7 +31,7 @@ export default async function mbwayCreateAuthorizedPayment(context, input) {
       token,
       gqlType: "MbwayPaymentData", // GraphQL union resolver uses this
     },
-    displayName: `MB Way payment`,
+    displayName: `MB Way`,
     method: METHOD,
     mode: "authorize",
     name: PAYMENT_METHOD_NAME,
