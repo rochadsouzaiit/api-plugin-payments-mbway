@@ -10,7 +10,7 @@
 export default async function mbwayListRefunds(context, payment) {
   const { transactionId } = payment;
 
-  const refunds = await context.collections.ExampleIOUPaymentRefunds.find({
+  const refunds = await context.collections.MbwayPaymentRefunds.find({
     transactionId,
   }).toArray();
 
