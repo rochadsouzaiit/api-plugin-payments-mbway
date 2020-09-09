@@ -1,27 +1,27 @@
 {
-  "name": "@reactioncommerce/api-plugin-payments-example",
-  "description": "Example Payments plugin for the Reaction API",
-  "version": "0.0.0-development",
+  "name": "@inflightit/api-plugin-payments-mbway",
+  "description": "MB Way plugin for the Reaction API",
+  "version": "0.0.1",
   "main": "index.js",
   "type": "module",
   "engines": {
     "node": ">=12.14.1"
   },
-  "homepage": "https://github.com/reactioncommerce/api-plugin-payments-example",
-  "url": "https://github.com/reactioncommerce/api-plugin-payments-example",
-  "email": "engineering@reactioncommerce.com",
+  "homepage": "https://github.com/rochadsouzaiit/api-plugin-payments-mbway",
+  "url": "https://github.com/rochadsouzaiit/api-plugin-payments-mbway",
+  "email": "info@inflightit.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactioncommerce/api-plugin-payments-example.git"
+    "url": "git+https://github.com/rochadsouzaiit/api-plugin-payments-mbway.git"
   },
   "author": {
-    "name": "Reaction Commerce",
-    "email": "engineering@reactioncommerce.com",
+    "name": "Inflight IT",
+    "email": "info@inflightit.com",
     "url": "https://reactioncommerce.com"
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/reactioncommerce/api-plugin-payments-example/issues"
+    "url": "https://github.com/rochadsouzaiit/api-plugin-payments-mbway/issues"
   },
   "sideEffects": false,
   "dependencies": {
