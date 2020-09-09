@@ -1,7 +1,7 @@
 /**
- * @name exampleCreateRefund
+ * @name mbwayCreateRefund
  * @method
- * @summary Create a refund for an order for example payment method
+ * @summary Create a refund for an order for MB way payment method
  * @param {Object} context an object containing the per-request state
  * @param {Object} payment object containing transaction ID
  * @param {Number} amount the amount to be refunded
@@ -9,14 +9,19 @@
  * @returns {Object} refund result
  * @private
  */
-export default async function exampleCreateRefund(context, payment, amount, reason) {
+export default async function mbwayCreateRefund(
+  context,
+  payment,
+  amount,
+  reason
+) {
   const { currencyCode, transactionId } = payment;
-  await context.collections.ExampleIOUPaymentRefunds.insertOne({
+  await context.collections.MbwayPaymentRefunds.insertOne({
     amount,
     createdAt: new Date(),
     currencyCode,
     reason,
-    transactionId
+    transactionId,
   });
   return { saved: true };
 }

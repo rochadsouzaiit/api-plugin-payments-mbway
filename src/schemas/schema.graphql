@@ -1,20 +1,20 @@
-"Data for an example IOU payment"
-type ExampleIOUPaymentData {
-  "The name of the IOU payer entered by the shopper"
-  fullName: String!
+"Data for an MB Way payment"
+type MbwayPaymentData {
+  "Internal token"
+  token: String!
 }
 
-extend union PaymentData = ExampleIOUPaymentData
+extend union PaymentData = MbwayPaymentData
 
-"Data for an example IOU payment method"
-type ExampleIOUPaymentMethodData {
-  "Example"
-  example: String!
+"Data for an MB way payment method"
+type MbwayPaymentMethodData {
+  "info"
+  info: String!
 }
 
-extend union PaymentMethodData = ExampleIOUPaymentMethodData
+extend union PaymentMethodData = MbwayPaymentMethodData
 
 extend enum PaymentMethodName {
-  "IOU Example payment method"
-  iou_example
+  "MB way payment method"
+  mbway
 }

@@ -1,28 +1,25 @@
 import Random from "@reactioncommerce/random";
 
-const METHOD = "credit";
-const PACKAGE_NAME = "example-paymentmethod";
-const PAYMENT_METHOD_NAME = "iou_example";
+const METHOD = "debit";
+const PACKAGE_NAME = "mbway-paymentmethod";
+const PAYMENT_METHOD_NAME = "mbway";
 
 // NOTE: The "processor" value is lowercased and then prefixed to various payment Meteor method names,
-// so for example, if this is "Example", the list refunds method is expected to be named "example/refund/list"
-const PROCESSOR = "Example";
+// so for example, if this is "Example", the list refunds method is expected to be named "sibs/refund/list"
+const PROCESSOR = "SIBS";
 
 /**
- * @summary As an example and for demos, this non-production payment method creates a payment
- *   without charging any credit card
+ * @summary Payment method that creates the authorization payment
  * @param {Object} context The request context
  * @param {Object} input Input necessary to create a payment
  * @returns {Object} The payment object in schema expected by the orders plugin
  */
-export default async function exampleCreateAuthorizedPayment(context, input) {
+export default async function mbwayCreateAuthorizedPayment(context, input) {
   const {
     amount,
     billingAddress,
     shopId,
-    paymentData: {
-      fullName
-    }
+    paymentData: { token },
   } = input;
 
   return {
@@ -31,10 +28,10 @@ export default async function exampleCreateAuthorizedPayment(context, input) {
     amount,
     createdAt: new Date(),
     data: {
-      fullName,
-      gqlType: "ExampleIOUPaymentData" // GraphQL union resolver uses this
+      token,
+      gqlType: "MbwayPaymentData", // GraphQL union resolver uses this
     },
-    displayName: `IOU from ${fullName}`,
+    displayName: `MB Way payment`,
     method: METHOD,
     mode: "authorize",
     name: PAYMENT_METHOD_NAME,
@@ -44,6 +41,6 @@ export default async function exampleCreateAuthorizedPayment(context, input) {
     shopId,
     status: "created",
     transactionId: Random.id(),
-    transactions: []
+    transactions: [],
   };
 }
