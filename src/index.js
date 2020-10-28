@@ -28,7 +28,7 @@ export default async function register(app) {
       {
         name: "mbway",
         canRefund: true,
-        displayName: "MB Way",
+        displayName: "MB-WAY",
         functions: {
           capturePayment: mbwayCapturePayment,
           createAuthorizedPayment: mbwayCreateAuthorizedPayment,
